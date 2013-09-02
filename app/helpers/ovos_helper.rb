@@ -1,0 +1,2 @@
+module OvosHelper
+end

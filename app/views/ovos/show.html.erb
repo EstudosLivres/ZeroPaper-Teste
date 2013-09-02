@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ovo:</strong>
+  <%= @ovo.ovo_id %>
+</p>
+
+<p>
+  <strong>Galinha:</strong>
+  <%= @ovo.galinha_id %>
+</p>
+
+<p>
+  <strong>Cor branco:</strong>
+  <%= @ovo.cor_branco %>
+</p>
+
+<%= link_to 'Edit', edit_ovo_path(@ovo) %> |
+<%= link_to 'Back', ovos_path %>

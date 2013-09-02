@@ -1,0 +1,31 @@
+<h1>Listing ovos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ovo</th>
+      <th>Galinha</th>
+      <th>Cor branco</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ovos.each do |ovo| %>
+      <tr>
+        <td><%= ovo.ovo_id %></td>
+        <td><%= ovo.galinha_id %></td>
+        <td><%= ovo.cor_branco %></td>
+        <td><%= link_to 'Show', ovo %></td>
+        <td><%= link_to 'Edit', edit_ovo_path(ovo) %></td>
+        <td><%= link_to 'Destroy', ovo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ovo', new_ovo_path %>

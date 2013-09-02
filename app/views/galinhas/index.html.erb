@@ -1,0 +1,31 @@
+<h1>Listing galinhas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Galinha</th>
+      <th>Nome</th>
+      <th>Raca</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @galinhas.each do |galinha| %>
+      <tr>
+        <td><%= galinha.galinha_id %></td>
+        <td><%= galinha.nome %></td>
+        <td><%= galinha.raca %></td>
+        <td><%= link_to 'Show', galinha %></td>
+        <td><%= link_to 'Edit', edit_galinha_path(galinha) %></td>
+        <td><%= link_to 'Destroy', galinha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Galinha', new_galinha_path %>

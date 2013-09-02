@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  galinha_id: 1
+  nome: MyString
+  raca: MyString
+
+two:
+  galinha_id: 1
+  nome: MyString
+  raca: MyString

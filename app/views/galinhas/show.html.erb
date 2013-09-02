@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Galinha:</strong>
+  <%= @galinha.galinha_id %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @galinha.nome %>
+</p>
+
+<p>
+  <strong>Raca:</strong>
+  <%= @galinha.raca %>
+</p>
+
+<%= link_to 'Edit', edit_galinha_path(@galinha) %> |
+<%= link_to 'Back', galinhas_path %>

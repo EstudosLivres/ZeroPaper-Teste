@@ -1,0 +1,29 @@
+<%= form_for(@ovo) do |f| %>
+  <% if @ovo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ovo.errors.count, "error") %> prohibited this ovo from being saved:</h2>
+
+      <ul>
+      <% @ovo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ovo_id %><br>
+    <%= f.number_field :ovo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :galinha_id %><br>
+    <%= f.number_field :galinha_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cor_branco %><br>
+    <%= f.check_box :cor_branco %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

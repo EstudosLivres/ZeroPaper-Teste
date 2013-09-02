@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ovo_id: 1
+  galinha_id: 1
+  cor_branco: false
+
+two:
+  ovo_id: 1
+  galinha_id: 1
+  cor_branco: false
