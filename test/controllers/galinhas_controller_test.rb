@@ -18,7 +18,7 @@ class GalinhasControllerTest < ActionController::TestCase
 
   test "should create galinha" do
     assert_difference('Galinha.count') do
-      post :create, galinha: { galinha_id: @galinha.galinha_id, nome: @galinha.nome, raca: @galinha.raca }
+      post :create, galinha: { galinha_id: @galinha.galinha_id, nome: @galinha.nome, racs: @galinha.racs }
     end
 
     assert_redirected_to galinha_path(assigns(:galinha))
@@ -35,7 +35,7 @@ class GalinhasControllerTest < ActionController::TestCase
   end
 
   test "should update galinha" do
-    patch :update, id: @galinha, galinha: { galinha_id: @galinha.galinha_id, nome: @galinha.nome, raca: @galinha.raca }
+    patch :update, id: @galinha, galinha: { galinha_id: @galinha.galinha_id, nome: @galinha.nome, racs: @galinha.racs }
     assert_redirected_to galinha_path(assigns(:galinha))
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902192649) do
+ActiveRecord::Schema.define(version: 20130905130900) do
 
   create_table "galinhas", force: true do |t|
     t.integer  "galinha_id"
@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20130902192649) do
     t.datetime "updated_at"
   end
 
-  add_index "galinhas", ["galinha_id"], name: "index_galinhas_on_galinha_id", unique: true
-
   create_table "ovos", force: true do |t|
     t.integer  "ovo_id"
     t.integer  "galinha_id"
@@ -30,7 +28,5 @@ ActiveRecord::Schema.define(version: 20130902192649) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "ovos", ["ovo_id"], name: "index_ovos_on_ovo_id", unique: true
 
 end

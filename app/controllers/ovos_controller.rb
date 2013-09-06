@@ -26,6 +26,15 @@ class OvosController < ApplicationController
   def create
     @ovo = Ovo.new(ovo_params)
 
+    #Parte destinada a fazer o auto_increment do id    
+    count_objs = Ovo.count()
+    unless count_objs 
+      endcount_objs = 0 
+    end 
+    
+    @ovo.ovo_id = count_objs+1
+    #Fim da automatização de incrementação do id
+
     respond_to do |format|
       if @ovo.save
         format.html { redirect_to @ovo, notice: 'Ovo was successfully created.' }

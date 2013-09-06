@@ -1,5 +1,5 @@
 class Ovo < ActiveRecord::Base
-  
-  belongs_to :galinha
-  
+
+	belongs_to :galinha
+
 end

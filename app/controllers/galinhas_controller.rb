@@ -10,6 +10,7 @@ class GalinhasController < ApplicationController
   # GET /galinhas/1
   # GET /galinhas/1.json
   def show
+    @ovos = Ovo.where(galinha_id: @galinha.galinha_id)
   end
 
   # GET /galinhas/new
@@ -19,12 +20,22 @@ class GalinhasController < ApplicationController
 
   # GET /galinhas/1/edit
   def edit
+    @galinha = Galinha.find(params[:id])
   end
 
   # POST /galinhas
   # POST /galinhas.json
   def create
     @galinha = Galinha.new(galinha_params)
+
+    #Parte destinada a fazer o auto_increment do id    
+    count_objs = Galinha.count()
+    unless count_objs 
+      endcount_objs = 0 
+    end 
+    
+    @galinha.galinha_id = count_objs+1
+    #Fim da automatização de incrementação do id
 
     respond_to do |format|
       if @galinha.save

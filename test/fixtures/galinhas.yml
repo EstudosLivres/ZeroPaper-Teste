@@ -3,9 +3,9 @@
 one:
   galinha_id: 1
   nome: MyString
-  raca: MyString
+  racs: MyString
 
 two:
   galinha_id: 1
   nome: MyString
-  raca: MyString
+  racs: MyString

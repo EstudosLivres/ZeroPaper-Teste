@@ -1,9 +1,9 @@
 ZeroPaperTeste::Application.routes.draw do
-  
+    
+  resources :galinhas
+
   resources :ovos
 
-  resources :galinhas
-  
   root to: "galinhas#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

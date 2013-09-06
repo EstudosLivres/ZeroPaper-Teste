@@ -1,31 +1,184 @@
-<h1>Listing galinhas</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    
+    <!-- Container que se sobrepõe a tela da fazenda -->
+    <div id="contentair_content-font_farm">
+      <div id="container">
+        <div class="row">
+          <h2 id="title_galinha" class="span5">Galinhas</h2>
+          <h2 id="title_ovos" class="span6">Ovos</h2>
+        </div>
+        <div class="row">
+          <!-- Lista de galinhas e as operações com as mesmas -->
+          <table id="lista_galinhas" border="1" class="table table-hover span5">
+                    <thead>
+                      <th class="lista_abriga_nome_coluna">ID</th>
+                      <th class="lista_abriga_nome_coluna">Nome</th>
+                      <th class="lista_abriga_nome_coluna">Raça</th>
+                      <th class="lista_abriga_nome_coluna">Ações</th>
+                  </thead>
+            
+            <tbody>
 
-<table>
-  <thead>
-    <tr>
-      <th>Galinha</th>
-      <th>Nome</th>
-      <th>Raca</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+              <!-- Primeira linha do corpo -->
+              <tr id="exemplo_galinha" class="hidden">
+                <!-- ID -->
+                <td id="galinha_id_exemplo"><span>1</span></td>
+                <!-- Nome -->
+                <td id="galinha_nome_exemplo"><span>Jurema</span></td>
+                <!-- Raça -->
+                <td id="galinha_raca_exemplo"><span>Caipira</span></td>
+                
+                <!-- Ações -->
+                <td>
+                  <button title="Editar Galinha" class="tooltiper btn btn-mini btn-info"><i class="icon-edit icon-white"></i></button>
+                  <button title="Visualizar Galinha" class="btn btn-mini btn-info"><i class="icon-eye-open icon-white"></i></button>
+                  <button title="Excluir Galinha" class="btn btn-mini btn-danger"><i class="icon-remove icon-white"></i></button>
+                </td>
+              </tr>
+              <!-- fim 1ª linha -->
 
-  <tbody>
-    <% @galinhas.each do |galinha| %>
-      <tr>
-        <td><%= galinha.galinha_id %></td>
-        <td><%= galinha.nome %></td>
-        <td><%= galinha.raca %></td>
-        <td><%= link_to 'Show', galinha %></td>
-        <td><%= link_to 'Edit', edit_galinha_path(galinha) %></td>
-        <td><%= link_to 'Destroy', galinha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            </tbody>
+          </table>
+          
+          <!-- Ações de gráficos e relatórios -->
+          <div id="acoes_extras" class="span2">
+            <!-- Linha dos botões de cadastro -->
+            <div id="acoes_cadastro" class="">
 
-<br>
+              <a id="btn_new_ovo" href="#new_ovo_modal" data-toggle="modal" title="Novo Ovo" class="btn btn-success"><i class="icon-plus icon-white"></i></a>
 
-<%= link_to 'New Galinha', new_galinha_path %>
+              <a id="btn_new_galinha" href="#new_galinha_modal" data-toggle="modal" title="Nova Galinha" class="btn btn-info"><i class="icon-plus icon-white"></i></a>
+              
+            </div>
+
+          </div>
+
+          <!-- Lista dos ovos e as operações com os mesmos -->
+          <table id="lista_ovos" border="1" class="table table-hover span5">
+                    <thead>
+                      <th class="lista_abriga_nome_coluna">ID</th>
+                      <th class="lista_abriga_nome_coluna">Mãe Nome (ID)</th>
+                      <th class="lista_abriga_nome_coluna">Cor Branco</th>
+                      <th class="lista_abriga_nome_coluna">Ações</th>
+                  </thead>
+
+            <tbody>
+
+              <!-- Primeira linha do corpo -->
+              <tr id="exemplo_ovo" class="hidden">
+                <!-- ID -->
+                <td id="ovo_id_exemplo"><span>1</span></td>
+                <!-- MãeNome (ID) -->
+                <td id="ovo_galinha_id_exemplo"><span class="texto_galinha">Jurema</span> (1)</td>
+                <!-- Cor Branco -->
+                <td id="ovo_icon-cor_exemplo"><span><i class="icon-ok"></i></span></td>
+                
+                <!-- Ações -->
+                <td>
+                  <button title="Editar Ovo" class="btn btn-mini btn-success"><i class="icon-edit icon-white"></i></button>
+                  <button title="Visualizar Ovo" class="btn btn-mini btn-success"><i class="icon-eye-open icon-white"></i></button>
+                  <button title="Excluir Ovo" class="btn btn-mini btn-danger"><i class="icon-remove icon-white"></i></button>
+                </td>
+              </tr>
+              <!-- fim 1ª linha -->
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- fim da parte que se sobrepõe -->
+  
+    <!-- Parte do frame que contemlpa a fazenda -->
+    <div id="block-top-a">
+      <div id="catavento"></div>
+      <div id="dirigivel"></div>
+      
+      <div class="top-a-shadow"></div> 
+    </div>
+    <!-- Fim da fazenda -->
+    
+    <!-- Modal Gráficos de produtividade Galinhas -->
+    <div id="grafico" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Gráfico de desempenho das Galinhas</h3>
+      </div>
+      <div id="grafico_load" class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger cancelar_modal" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Modal OVO -->
+    <div id="new_ovo_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Formulário de Ovos</h3>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" action="localhost:3000/ovos" class="new_ovo form-horizontal" id="new_ovo" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nDsgFZS0EDdv4/ms+eCMSyV32h3cjosy2v/HobDEf30=" /></div>
+          <div class="field control-group">
+            <label class="control-label" for="ovo_galinha_id">Galinha mãe</label><br>
+            <div class="controls">
+              <input id="ovo_galinha_id" name="ovo[galinha_id]" type="number" placeholder="ID da Galinha mãe"/>
+              <span class="help-inline">O ID da Galinha mãe inválido</span>
+            </div>
+          </div>
+          <div class="field control-group">
+            <label class="control-label" for="ovo_cor_branco">Cor branco</label><br>
+            <div class="controls">
+              <input name="ovo[cor_branco]" type="hidden" value="0" /><input id="ovo_cor_branco" name="ovo[cor_branco]" type="checkbox" value="1" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger cancelar_modal" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+        <input id="submit_ovo" class="btn btn-success" name="commit" type="submit" value="Cadastrar" />
+      </div>
+    </div>
+    
+    <!-- Modal GALINHA -->
+    <div id="new_galinha_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Formulário de Galinhas</h3>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" action="localhost:3000/galinhas" class="new_galinha form-horizontal" id="new_galinha" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nDsgFZS0EDdv4/ms+eCMSyV32h3cjosy2v/HobDEf30=" /></div>
+          <input id="galinha_galinha_id" name="galinha[galinha_id]" class="hidden" type="number" value="5" />
+          <div class="field control-group">
+            <label class="control-label" for="galinha_nome">Nome</label><br>
+            <div class="controls">
+              <input id="galinha_nome" name="galinha[nome]" type="text" placeholder="Nome da galinha" />
+              <span class="help-inline">Nome da Galinha inválido</span>
+            </div>
+          </div>
+          <div class="field control-group">
+            <label class="control-label" for="galinha_raca">Raça</label><br>
+            <div class="controls">
+              <input id="galinha_raca" name="galinha[raca]" type="text" placeholder="Raça da galinha" />
+              <span class="help-inline">Raça da Galinha inválida</span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger cancelar_modal" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+        <input id="submit_galinha" class="btn btn-info" name="commit" type="submit" value="Cadastrar" />
+      </div>
+    </div>
+    
+  <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  </body>
+</html>
