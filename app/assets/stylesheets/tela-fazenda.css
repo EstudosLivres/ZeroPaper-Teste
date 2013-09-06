@@ -1,0 +1,173 @@
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(360deg);
+    }
+    to{
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes
+zeppelin{
+	0%{	-webkit-transform:translateY(0px) }
+	50%{	-webkit-transform:translateY(45px) }
+	100%{	-webkit-transform:translateY(0px) }
+}
+
+.ui-pnotify-history-container {
+	display: none;
+}
+
+body {
+	cursor: default;
+}
+
+#block-top-a {
+	overflow: hidden;
+	position: relative;
+	z-index: -999;
+	padding-top: 15%;
+	min-height: 440px;
+	background: #addadb url("img/fazenda-imgs/landscape_full_farm.jpg") 50% 100% no-repeat;
+
+	box-shadow: inset 1px 7px 58px 0px #ABABAB,1px 5px 5px 1px #242424;
+	-webkit-box-shadow: inset 1px 7px 58px 0px #ABABAB,1px 5px 5px 1px #242424;
+	-moz-box-shadow: inset 1px 7px 58px 0px #ABABAB,1px 5px 5px 1px #242424;
+	-o-box-shadow: inset 1px 7px 58px 0px #ABABAB,1px 5px 5px 1px #242424;
+}
+
+#catavento {
+	position: absolute;
+	left: 50%;
+	bottom: 140px;
+	height: 130px;
+	width: 130px;
+	margin-left: -642px;
+	background: url("img/fazenda-imgs/cata-vento.png") 0 0 no-repeat;
+	-webkit-animation: rotating 1s linear infinite;
+	-moz-animation: rotating 1s linear infinite;
+	-ms-animation: rotating 1s linear infinite;
+	-o-animation: rotating 1s linear infinite;
+}
+
+#dirigivel {
+	position: absolute;
+	left: 46%;
+	bottom: 250px;
+	height: 153px;
+	width: 225px;
+	margin-left: 500px;
+	background: url("img/fazenda-imgs/dirigivel.png") 0 0 no-repeat;
+	-webkit-animation: zeppelin 10s infinite;
+	-moz-animation: zeppelin 10s infinite;
+	-ms-animation: zeppelin 10s infinite;
+	animation: zeppelin 10s infinite;
+}
+
+#contentair_content-font_farm {
+	position: absolute;
+	overflow: hidden;
+	margin: 4% 0 0 5.2%;
+	min-height: 208px;
+	max-height: 516px;
+	min-width: 960px;
+	z-index: 555;
+	padding: 15px 7px;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color:rgba(255,255,255,0.5);
+}
+
+table th, .table td {
+	border-top: none;
+	padding: 4px 6px;
+}
+
+table span {
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+.texto_galinha {
+	color: #3a87ad;
+}
+
+#lista_galinhas {
+	text-align: center;
+	color: #3a87ad;
+	border: 1px solid #3cd0ea;
+}
+
+#lista_galinhas thead {
+	border: 1px solid #3cd0ea;
+}
+
+#lista_ovos {
+	text-align: center;
+	color: #468847;
+	border: 1px solid #70d17c;
+}
+
+#btn_new_ovo {
+	float: right;
+}
+
+#btn_new_galinha {
+	float: left;
+}
+
+#acoes_cadastro a {
+	margin-top: 5px;
+}
+
+form label {
+	margin-top: 17px;
+}
+
+td center a {
+	margin-right: 10px;
+}
+
+.help-inline {
+	display: none;
+	visibility: hidden;
+}
+
+.error .help-inline {
+	visibility: visible;
+}
+
+.success .help-inline, .info .help-inline {
+	visibility: hidden;
+}
+
+h2 {
+	text-align: center;
+	/*text-transform: uppercase;*/
+}
+
+h3 {
+	color: #3a87ad;
+}
+
+#title_galinha {
+	color: #3a87ad;
+}
+
+#title_ovos {
+	color: #468847;
+	float: right;
+}
+
+#new_galinha_modal {
+	color: #3a87ad;
+}
+
+#new_ovo_modal {
+	color: #468847;
+}
+
+
+
